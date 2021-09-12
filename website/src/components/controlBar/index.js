@@ -1,4 +1,5 @@
 import React from "react";
+import CONTEXT from "../contextProvider";
 import { Drawer, makeStyles, useTheme, List, ListItem, ListItemText, ListItemIcon, CssBaseline, IconButton } from '@material-ui/core';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { 
@@ -33,10 +34,11 @@ const useStyles = makeStyles((theme) => ({
   paper: { 
     display: "flex", 
     justifyContent: "space-between", 
-    backgroundColor: "rgb(24, 23, 20)" 
+    backgroundColor: "rgb(24, 23, 20)",
+    width: CONTEXT.sideBarWidth,
   },
   noPadding: { padding: "0" },
-  expandCollapse: { position: "absolute", top: "-50px", left: "40px" },
+  // expandCollapse: { position: "absolute", top: "-50px", left: "40px" },
   navIcon: { marginLeft: "auto", marginRight: "auto" },
   listItem : { 
     color: "blanchedalmond",
