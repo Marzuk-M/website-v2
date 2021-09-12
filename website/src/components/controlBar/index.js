@@ -1,6 +1,16 @@
 import React from "react";
 import CONTEXT from "../contextProvider";
-import { Drawer, makeStyles, useTheme, List, ListItem, ListItemText, ListItemIcon, CssBaseline, IconButton } from '@material-ui/core';
+import { 
+  Drawer, 
+  makeStyles, 
+  // useTheme, 
+  List, 
+  ListItem, 
+  // ListItemText, 
+  // ListItemIcon, 
+  // CssBaseline, 
+  IconButton 
+} from '@material-ui/core';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { 
   faHome, 
@@ -10,7 +20,7 @@ import {
   faClipboard, 
   faEnvelope,
   faQuestionCircle, 
-  faAngleRight,
+  // faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
 
 const useStyles = makeStyles((theme) => ({
@@ -24,7 +34,11 @@ const useStyles = makeStyles((theme) => ({
     // transition: "1s" 
   },
   titleList: { margin: "0 auto" },
-  titleListItem: { color: "blanchedalmond", fontSize: "x-large", padding: 0 },
+  titleListItem: { 
+    color: "blanchedalmond", 
+    fontSize: "x-large", 
+    padding: 0 
+  },
   faIcons: { 
     textAlign: "center", 
     marginRight: "auto", 
@@ -38,8 +52,10 @@ const useStyles = makeStyles((theme) => ({
     width: CONTEXT.sideBarWidth,
   },
   noPadding: { padding: "0" },
-  // expandCollapse: { position: "absolute", top: "-50px", left: "40px" },
-  navIcon: { marginLeft: "auto", marginRight: "auto" },
+  navIcon: { 
+    marginLeft: "auto", 
+    marginRight: "auto" 
+  },
   listItem : { 
     color: "blanchedalmond",
     '&:hover': {
@@ -70,12 +86,6 @@ const ControlBar = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-    {/* //   <IconButton className={classes.expandCollapse}>
-    //     <FontAwesomeIcon
-    //       icon={faAngleRight}
-    //       className={classes.faIcons}
-    //     />
-    //   </IconButton> */}
       <Drawer anchor="left" variant="permanent" classes={{paper: classes.paper}}>
         <List classes={{root: classes.titleList}}>
           <ListItem classes={{root: classes.titleListItem}}>MM</ListItem>
