@@ -1,8 +1,19 @@
 import React from "react";
+import { makeStyles } from "@material-ui/core"; 
+
+const useStyles = makeStyles((theme) => ({
+  pageBase: { 
+    margin: 0, 
+    padding: 0, 
+  },
+}));
 
 const Home = () => {
+  const classes = useStyles();
   return (
-    <div style={{ margin: 0, padding: 0, width: "100%", height: "100%", backgroundColor: "blanchedalmond" }}>Hi Hi Hi</div>
+    <div className={classes.root}>
+      home
+    </div>
   );
 }
 

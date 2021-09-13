@@ -50,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between", 
     backgroundColor: "rgb(24, 23, 20)",
     width: CONTEXT.sideBarWidth,
+    borderRight: "none"
   },
   noPadding: { padding: "0" },
   navIcon: { 
@@ -60,8 +61,9 @@ const useStyles = makeStyles((theme) => ({
     color: "blanchedalmond",
     '&:hover': {
       backgroundColor: "blanchedalmond",
-      color: "black"
+      color: "black",
     },
+    transition: "0.7s",
     paddingTop: "1em",
     paddingBottom: "1em",
     borderTop: "solid blanchedalmond 1px",
@@ -122,7 +124,11 @@ const ControlBar = () => {
               className={classes.faIcons}
             />
           </ListItem>
-          <ListItem button className={classes.listItem} style={{borderBottom: "solid blanchedalmond 1px"}}>
+          <ListItem 
+            button 
+            className={classes.listItem} 
+            style={{borderBottom: "solid blanchedalmond 1px"}}
+          >
             <FontAwesomeIcon
               icon={faEnvelope}
               className={classes.faIcons}
