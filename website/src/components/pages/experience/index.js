@@ -8,13 +8,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Home = () => {
+const Experience = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      home
+      experience
     </div>
   );
 }
 
-export default Home;
+export default Experience;

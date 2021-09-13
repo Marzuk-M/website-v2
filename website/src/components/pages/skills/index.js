@@ -8,13 +8,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Home = () => {
+const Skills = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      home
+      skills
     </div>
   );
 }
 
-export default Home;
+export default Skills;

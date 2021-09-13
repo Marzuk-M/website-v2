@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   footerText: {
     margin: 0, 
     fontFamily: "Lucida Handwriting",
-    padding: "0 1em 1em"
+    padding: "0 1em 1em",
   },
 }));
 
