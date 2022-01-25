@@ -1,14 +1,9 @@
-import React from "react";
-import CONTEXT from "../contextProvider";
+import { React, useState } from "react";
 import { 
   Drawer, 
   makeStyles, 
-  // useTheme, 
   List, 
   ListItem, 
-  // ListItemText, 
-  // ListItemIcon, 
-  // CssBaseline, 
   IconButton 
 } from '@material-ui/core';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -20,19 +15,12 @@ import {
   faClipboard, 
   faEnvelope,
   faQuestionCircle, 
-  // faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
+import CONTEXT from "../contextProvider";
+import HelpMenu from "../help";
 
 const useStyles = makeStyles((theme) => ({
-  root: { 
-    display: "flex", 
-    // opacity: 0.5, 
-    // '&:hover': {
-    //   opacity: 1, 
-    //   transition: "0.5s"
-    // }, 
-    // transition: "1s" 
-  },
+  root: { display: "flex", },
   titleList: { margin: "0 auto" },
   titleListItem: { 
     color: "blanchedalmond", 
@@ -86,6 +74,8 @@ const useStyles = makeStyles((theme) => ({
 
 const ControlBar = () => {
   const classes = useStyles();
+  const [open, toggleModal] = useState(false);
+
   return (
     <div className={classes.root}>
       <Drawer anchor="left" variant="permanent" classes={{paper: classes.paper}}>
@@ -138,7 +128,10 @@ const ControlBar = () => {
         
         <List classes={{root: classes.helpList}}>
           <ListItem classes={{root: classes.helpListItem}}>
-            <IconButton className={classes.help}>
+            <IconButton 
+              className={classes.help} 
+              onClick={() => toggleModal(!open)}
+            >
               <FontAwesomeIcon
                 icon={faQuestionCircle}
                 classes={{root: classes.faIcons}}
@@ -149,6 +142,7 @@ const ControlBar = () => {
         </List>
 
       </Drawer>
+      <HelpMenu open={open} toggleModal={toggleModal}/>
     </div>
   );
 }
